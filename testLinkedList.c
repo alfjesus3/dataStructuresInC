@@ -26,27 +26,30 @@ void transverseListAndPrint(struct node **start)
 
 int main (void)
 {
-    //struct node *start = NULL;  
-
-    //printf("0\n");
     //insertNodeEnd(&start, 5);
-    //printf("1\n");
     //printf("%d\n", (*start).data);
     //insertNodeEnd(&start, 1);
+
     int i; 
     for(i =0; i< MAX_C; i++){
         insertNodeEnd(&start, i);
     }
    
     transverseListAndPrint(&start);
-    
+    printf("--------------\n"); 
+
     // Testing search for a node with a specific value
     struct node *found;
     found = searchForNode(&start, 4);
     assert(found != NULL);
     printf("%d\n", (*found).data);
-    
-        
+    printf("--------------\n"); 
+
+    // Deleting Nodes
+    deleteNodeEnd(&start);
+    deleteNodeBeginning(&start);
+    transverseListAndPrint(&start);
+    printf("--------------\n"); 
 
     return 0;
 }

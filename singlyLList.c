@@ -67,3 +67,31 @@ struct node *searchForNode(struct node **start, int val)
     
     return res;
 }
+
+void deleteNodeBeginning(struct node **start)
+{
+    struct node *ptr; // do I need this node ??
+    ptr = *start;
+    
+    *start = (*ptr).next; 
+}
+
+void deleteNodeEnd(struct node **start)
+{
+    struct node *ptr, *nPtr;
+    ptr = *start;
+    
+    if((*ptr).next == NULL){
+        printf("Single node");
+        deleteNodeEnd(start); // When there is a single node
+    }else{
+        nPtr = (*ptr).next; // it is always one node ahead
+        while((nPtr = (*nPtr).next) != NULL)
+            ptr = (*ptr).next;
+        
+        struct node * old;
+        old = (*ptr).next;
+        free(old); // is this necessary ??
+        (*ptr).next = NULL;
+    }        
+}   
