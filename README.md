@@ -13,3 +13,7 @@ gcc -Wall -c <dataStructure>.c
 gcc -o testing <dataStructure>.o <testFile>.o
 
 ```
+
+TODOs
+------
+- Create Makefile for proj;

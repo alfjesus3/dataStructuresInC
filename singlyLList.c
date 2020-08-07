@@ -52,3 +52,18 @@ void insertNodeEnd(struct node **start, int val)
     }
 }
 
+struct node *searchForNode(struct node **start, int val)
+{
+    struct node *ptr, *nPtr, *res = NULL;
+    ptr = *start;
+    //*res = NULL;
+    
+    while((nPtr = (*ptr).next) != NULL)
+        if ((*ptr).data == val){
+            res = ptr;
+            break;
+        }else
+            ptr = nPtr;
+    
+    return res;
+}

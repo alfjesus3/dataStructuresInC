@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
+    
 #include "singlyLList.h"
 
 #define MAX_C 10
@@ -37,6 +39,14 @@ int main (void)
     }
    
     transverseListAndPrint(&start);
+    
+    // Testing search for a node with a specific value
+    struct node *found;
+    found = searchForNode(&start, 4);
+    assert(found != NULL);
+    printf("%d\n", (*found).data);
+    
+        
 
     return 0;
 }

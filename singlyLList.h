@@ -27,3 +27,4 @@ void insertNodeBeginning(struct node **start, int val);
 
 void insertNodeEnd(struct node **start, int val);
 
+struct node *searchForNode(struct node **start, int val);
