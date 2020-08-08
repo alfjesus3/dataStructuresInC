@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #include "singlyLList.h"
 
@@ -21,23 +22,19 @@ struct node *createNode()
 
 void insertNodeBeginning(struct node **start, int val)
 {
-    //printf("entered\n");
     struct node *old;
     old = *start;
-    //printf("entered\n");
     
     *start = createNode();
     
     (**start).data = val; 
     (**start).next = old;
-    //printf("%d\n", (**start).data);
 }
 
 void insertNodeEnd(struct node **start, int val)
 {
     if(*start == NULL){
         insertNodeBeginning(start, val);
-        //printf("%d\n", (**start).data);
     }else{
         struct node *ptr, *nPtr;
         ptr = *start;
@@ -47,7 +44,8 @@ void insertNodeEnd(struct node **start, int val)
         
         struct node *newN = createNode();
         (* newN).data = val;
-        (* newN).next = NULL; // necessary ??
+        assert((* newN).next == NULL);
+        //(* newN).next = NULL; // necessary ??
         (* ptr).next = newN; 
     }
 }
@@ -56,7 +54,6 @@ struct node *searchForNode(struct node **start, int val)
 {
     struct node *ptr, *nPtr, *res = NULL;
     ptr = *start;
-    //*res = NULL;
     
     while((nPtr = (*ptr).next) != NULL)
         if ((*ptr).data == val){
@@ -73,7 +70,8 @@ void deleteNodeBeginning(struct node **start)
     struct node *ptr; // do I need this node ??
     ptr = *start;
     
-    *start = (*ptr).next; 
+    *start = (*ptr).next;
+    free(ptr); 
 }
 
 void deleteNodeEnd(struct node **start)
@@ -91,7 +89,7 @@ void deleteNodeEnd(struct node **start)
         
         struct node * old;
         old = (*ptr).next;
-        free(old); // is this necessary ??
+        free(old);
         (*ptr).next = NULL;
     }        
 }   
