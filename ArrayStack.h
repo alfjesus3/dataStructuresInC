@@ -12,9 +12,9 @@
 
 int *createStack(); // allocates the memory for a empty stack with MAX memory positions available
 
-void push(int val); // it adds a element to the top of the stack
+void push(int **stack, int *top, int val); // it adds a element to the top of the stack
 
-int peek(); // it retrieves the value of the top element of the stack without removing it
+int peek(int **stack, int *top); // it retrieves the value of the top element of the stack without removing it
 
-void pop(); // it removes the top element of the stack
+void pop(int **stack, int *top); // it removes the top element of the stack
 
