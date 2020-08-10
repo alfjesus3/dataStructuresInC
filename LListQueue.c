@@ -21,13 +21,8 @@ void insertInQueue(struct queue **qe, int val)
         struct node *ptr;
         ptr = (**qe).rear;
         insertNodeEnd(&ptr, val);
-        (**qe).rear = ptr->next; 
+        (**qe).rear = ptr->next;
     }
-}
-
-struct node *peek(struct queue **qe)
-{
-    return NULL;
 }
 
 void deleteInQueue(struct queue **qe)
@@ -35,6 +30,12 @@ void deleteInQueue(struct queue **qe)
     if((**qe).front == NULL){
         printf("UNDERFLOW\n");
     }else{
-
+        struct node *ptr;
+        ptr = (**qe).front;
+        deleteNodeBeginning(&ptr);
+        if(ptr != NULL)
+            (**qe).front = ptr;
+        else
+            (**qe).front = (**qe).front = NULL;
     }
 }

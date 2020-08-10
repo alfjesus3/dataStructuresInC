@@ -7,9 +7,6 @@ int main(void)
     struct queue *ptr = createQueue();
     printf("The queue is :%d\n", ptr != NULL);
     
-    // Testing special case delete
-    deleteInQueue(&ptr);    
-    
     // Testing insert
     insertInQueue(&ptr, 5);
     insertInQueue(&ptr, 89);
@@ -20,7 +17,17 @@ int main(void)
     printf("Front: %d\tRear: %d\n", (*ptr).front->data, (*ptr).rear->data); 
     
     // Testing delete
-   
+    deleteInQueue(&ptr);    
+    printf("Front: %d\tRear: %d\n", (*ptr).front->data, (*ptr).rear->data); 
+    deleteInQueue(&ptr);    
+    printf("Front: %d\tRear: %d\n", (*ptr).front->data, (*ptr).rear->data); 
+    deleteInQueue(&ptr);    
+    printf("Front: %d\tRear: %d\n", (*ptr).front->data, (*ptr).rear->data); 
+    deleteInQueue(&ptr);    
+    //printf("Front: %d\tRear: %d\n", (*ptr).front->data, (*ptr).rear->data); 
+     
+    // Testing special case delete
+    deleteInQueue(&ptr);    
 
     return 0;
 }

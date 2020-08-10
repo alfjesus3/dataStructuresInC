@@ -21,6 +21,4 @@ struct queue *createQueue(); // allocates dynamically the memory for the Queue p
 
 void insertInQueue(struct queue **, int); // adds a new node in the queue rear using insertNodeEnd from singlyLList
 
-struct node *peek(struct queue **); // returns the node at the front of the queue and NULL otherwise
-
 void deleteInQueue(struct queue **); // removes the node in front of the queue using deleteNodeBeginning from singlyLList
