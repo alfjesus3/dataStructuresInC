@@ -13,25 +13,9 @@ int *createStack()
 
 void push(int **stack, int *top, int val)
 {
-    printf("entered1\n");
-    /*
-    if(*top == -1){
-        printf("entered2\n");
-        *stack = createStack(); // Allocating the memory for the Array based Stack
-        **stack = val;
-        *top = 0;
-    }else if(*top == (MAX_ST-1)){
-        printf("%d\n", (*top - (MAX_ST-1)));
-        printf("OVERFLOW");
-    }else{
-        *top++;
-        stack++;
-        **stack = val;
-    }    
-    */
     if(*top == (MAX_ST-1)){
-        printf("%d\n", (*top - (MAX_ST-1)));
-        printf("OVERFLOW");
+        //printf("%d\n", (*top - (MAX_ST-1)));
+        printf("*** OVERFLOW\n");
     }else{
         if(*top == -1)
             *stack = createStack();
@@ -50,11 +34,11 @@ int peek(int **stack, int *top)
 
 void pop(int **stack, int *top)
 {
-    if((*top == -1)){// || (stack == top) && (*top == 0)){
-        printf("UNDERFLOW");
+    if((*top == -1)){
+        printf("*** UNDERFLOW\n");
     }else{
         **stack = 0; // to "clean" the memory position
-        stack--; // the top becomes the previous contiguous memory space 
+        (*stack)--; // the top becomes the previous contiguous memory space 
         (*top)--;  
     }
 }

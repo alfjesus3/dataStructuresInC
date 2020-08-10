@@ -4,7 +4,7 @@
 
 #include "singlyLList.h"
 
-
+/*
 struct node **initializePtrOfPtr()
 {
     struct node **ptr;
@@ -12,6 +12,7 @@ struct node **initializePtrOfPtr()
     ptr = &tmp;
     return ptr;
 }
+*/
 
 struct node *createNode()
 {

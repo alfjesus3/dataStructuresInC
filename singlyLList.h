@@ -19,16 +19,15 @@ struct node
     struct node *next;
 };
 
-struct node **initializePtrOfPtr();
 
-struct node *createNode();
+struct node *createNode(); // it allocates the memory for a node struct dynamically
 
-void insertNodeBeginning(struct node **start, int val);
+void insertNodeBeginning(struct node **start, int val); // insert a node in the beginning of the list
 
-void insertNodeEnd(struct node **start, int val);
+void insertNodeEnd(struct node **start, int val); // insert a node in the end of the list
 
-struct node *searchForNode(struct node **start, int val);
+struct node *searchForNode(struct node **start, int val); // search for the node with the specified value and returns it if found and NULL otherwise
 
-void deleteNodeBeginning(struct node **start);
+void deleteNodeBeginning(struct node **start); // deletes a node from the beginning
 
-void deleteNodeEnd(struct node **start);
+void deleteNodeEnd(struct node **start); // deletes a node from the end of the list
