@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #include "LListQueue.h"
-//#include "singlyLList.h"
 
 
 struct queue *createQueue()
@@ -19,7 +18,10 @@ void insertInQueue(struct queue **qe, int val)
         (**qe).front->data = val;
         (**qe).rear = (**qe).front;
     }else{
-        
+        struct node *ptr;
+        ptr = (**qe).rear;
+        insertNodeEnd(&ptr, val);
+        (**qe).rear = ptr->next; 
     }
 }
 

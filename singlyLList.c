@@ -46,7 +46,6 @@ void insertNodeEnd(struct node **start, int val)
         struct node *newN = createNode();
         (* newN).data = val;
         assert((* newN).next == NULL);
-        //(* newN).next = NULL; // necessary ??
         (* ptr).next = newN; 
     }
 }
