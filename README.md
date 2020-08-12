@@ -22,7 +22,7 @@ make clean // to clean the .o files and executable files
 TODOs
 ------
 - Introduce more abstract structure so it can work other data types;
-
+- Implement Tree, a Heap, graphs and hashing and collision data structure;
 DONE
 ------
 - Create Makefile for proj;
